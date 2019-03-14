@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('authors');
             $table->integer('year');
             $table->string('publisher');
+            $table->string('subscription status')->default('unsubscribed');
             $table->string('image');
             $table->timestamps();
         });
