@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
 
+    public function getRouteKeyName()
+    {
+        return 'isbn';
+    }
 
     public function users()
     {
