@@ -17,10 +17,9 @@ class CreateBooksTable extends Migration
             $table->bigIncrements('id');
             $table->string('isbn');
             $table->string('name');
-            $table->string('authors');
             $table->integer('year');
             $table->string('publisher');
-            $table->string('subscription status')->default('unsubscribed');
+            $table->string('subscription_status')->default('unsubscribed');
             $table->string('image');
             $table->timestamps();
         });
