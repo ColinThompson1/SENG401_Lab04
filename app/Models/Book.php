@@ -14,16 +14,16 @@ class Book extends Model
 
     public function users()
     {
-      return $this->belongsToMany('App/User', "subscription");
+      return $this->belongsToMany('App\User', "subscription");
     }
 
     public function authors()
     {
-      return $this->belongsToMany('App/Author');
+      return $this->belongsToMany('App\Models\Author');
     }
 
     public function comments()
     {
-      return $this->hasMany('App/Comment');
+      return $this->hasMany('App\Comment');
     }
 }

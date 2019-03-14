@@ -42,13 +42,13 @@ class User extends Authenticatable
 		**/
 		public function books()
 		{
-			return $this->belongsToMany('App/Book', 'subscription');
+			return $this->belongsToMany('App\Book', 'subscription');
 		}
 		/**
 		* Users can have multiple comments
 		**/
 		public function comments()
 		{
-			return $this->hasMany('App/Comment');
+			return $this->hasMany('App\Comment');
 		}
 }
