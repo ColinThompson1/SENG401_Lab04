@@ -11,4 +11,11 @@
 
     @include('partials.footer')
 
+
+    <h2>Comments</h2>
+    @foreach ($comments as $comment)
+      @include('partials.commentList', ['comment' => $comment])
+    @endforeach
+
+
 </html>

@@ -50,7 +50,9 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        return view('pages.book-detail')->with(['book' => $book]);
+        $comments = $book->comments;
+        return view('pages.book-detail', compact('book', 'comments'));
+        //return view('pages.book-detail')->with(['book' => $book]);
     }
 
     /**
