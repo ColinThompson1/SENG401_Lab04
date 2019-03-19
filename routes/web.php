@@ -18,6 +18,7 @@ Route::get('/', function () {
     return redirect('home');
 });
 
+Route::get('books/{isbn}/comment', ['uses' =>'CommentsController@addComment']);
 
 Route::get('books', function () {
     return redirect('books');

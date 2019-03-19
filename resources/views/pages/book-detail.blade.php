@@ -13,6 +13,8 @@
 
 
     <h2>Comments</h2>
+    <a href="{{ url("/books/$book->isbn/comment") }}" class="btn btn-primary">Add Comment</a>
+
     @foreach ($comments as $comment)
       @include('partials.commentList', ['comment' => $comment])
     @endforeach
