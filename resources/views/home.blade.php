@@ -21,3 +21,13 @@
     </div>
 </div>
 @endsection
+<div class="content">
+  <style>
+    .title {
+        font-size: 84px;
+    }
+  </style>
+    <div class="title m-b-md">
+        SENG401 Lab 4
+    </div>
+</div>

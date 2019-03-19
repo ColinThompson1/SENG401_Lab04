@@ -13,8 +13,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('books', function () {
     return redirect('books');
+});
+
+Route::get('/', function () {
+    return redirect('home');
 });
 
 Route::resource('books', 'BooksController');
