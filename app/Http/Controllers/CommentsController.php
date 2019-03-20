@@ -9,6 +9,9 @@ use App\Models\User;
 
 class CommentsController extends Controller
 {
+    /**
+    * store a new comment in the database then return to the book-detail page
+    */
     public function store($isbn)
     {
       if(auth()->user()->role == 'subscriber')

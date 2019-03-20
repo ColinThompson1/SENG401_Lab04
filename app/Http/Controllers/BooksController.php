@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 class BooksController extends Controller
 {
 
+    /**
+    * Only allow access to those who are signed in as valid users
+    * To add more restrictions add the method name to the array in only()
+    * Or if you want to restrict access for the entirety of BooksController
+    * remove only() (eg $this->middleware('auth'))
+    */
     public function __construct()
     {
         $this->middleware('auth')->only(['index', 'show']);
