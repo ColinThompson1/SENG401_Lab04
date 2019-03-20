@@ -7,6 +7,6 @@
         <p><b>Publisher: </b> {{ $book->publisher }}</p>
         <p><b>ISBN: </b> {{ $book->isbn }}</p>
         <hr>
-        <a href="{{ url('/books/$book->isbn') }}" class="btn btn-primary">View Book</a>
+        <a href="{{ url("/books/$book->isbn") }}" class="btn btn-primary">View Book</a>
     </div>
 </div>
