@@ -19,7 +19,7 @@ class BooksTableSeeder extends Seeder
             DB::table('books')->insert([
                 'isbn' => $record['ISBN'],
                 'name' => $record['Name'],
-                'authors' => Illuminate\Support\Str::random(10),
+                // 'authors' => Illuminate\Support\Str::random(10),
                 'year' => $record['Year'],
                 'publisher' => $record['Publisher'],
                 'image' => $record['Image'],
