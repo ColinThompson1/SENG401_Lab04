@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['index', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +55,9 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        return view('pages.book-detail')->with(['book' => $book]);
+        $comments = $book->comments;
+        return view('pages.book-detail', compact('book', 'comments'));
+        //return view('pages.book-detail')->with(['book' => $book]);
     }
 
     /**
