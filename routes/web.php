@@ -18,13 +18,15 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-Route::get('books/{isbn}/comment', ['uses' =>'CommentsController@addComment']);
+Route::post('books/{isbn}','CommentsController@store');
 
 Route::get('books', function () {
     return redirect('books');
 });
 
 Route::resource('books', 'BooksController');
+
+
 
 Route::get('welcome', function () {
     return view('welcome');
