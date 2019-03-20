@@ -22,14 +22,16 @@ class CommentsController extends Controller
           'text' => request('text'),
         ]);
 
-        $comments = $book->comments;
-        return view('pages.book-detail', compact('book', 'comments'));
+        //$comments = $book->comments;
+        //return view('pages.book-detail', compact('book', 'comments'));
+        return redirect()->back();
       }
       else
       {
-        $book = Book::where('isbn', $isbn)->get()->first();
-        $comments = $book->comments;
-        return view('pages.book-detail', compact('book', 'comments'))->with('alert', 'Must be a subscriber to leave a comment');
+        //$book = Book::where('isbn', $isbn)->get()->first();
+        //$comments = $book->comments;
+        //return view('pages.book-detail', compact('book', 'comments'))->with('message', 'Must be a subscriber to leave a comment');
+        return redirect()->back()->with('alert', 'Must be a subscriber to leave a comment');
       }
     }
 }

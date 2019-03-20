@@ -1,4 +1,10 @@
 <html>
+
+  @if (session('alert'))
+    <div class="alert alert-success">
+        {{ session('alert') }}
+    </div>
+  @endif
     @include('partials.header')
 
     <img class="card-img-top" src="{{$book->image}}" style="max-width: 256px">
