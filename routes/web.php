@@ -26,7 +26,11 @@ Route::get('books', function () {
 
 Route::resource('books', 'BooksController');
 
+Route::get('subscriptions', function() {
+    return redirect('subscriptions');
+});
 
+Route::resource('subscriptions', 'SubscriptionsController');
 
 Route::get('welcome', function () {
     return view('welcome');

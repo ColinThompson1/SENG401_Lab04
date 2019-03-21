@@ -50,5 +50,35 @@ class User extends Authenticatable
 		public function comments()
 		{
 			return $this->hasMany('App\Models\Comment');
-		}
+        }
+
+        public function subscribe($book)
+        {
+            $this->subscriptions()->create([
+                'user_id' => $this->id,
+                'book_id' => $book->id,
+            ]);
+            return $this;
+        }
+
+        public function unsubscribe($book)
+        {
+            $this->subscriptions()
+                ->where('user_id', $this->id)
+                ->where('book_id', $book->id)
+                ->delete();
+        }
+
+        public function isSubscribed($book_id)
+        {
+            return $this->subscriptions()
+                ->where('user_id', $this->id)
+                ->where('book_id', $book_id)
+                ->exists();
+        }
+
+        public function subscriptions()
+        {
+            return $this->hasMany('App\Models\Subscription');
+        }
 }

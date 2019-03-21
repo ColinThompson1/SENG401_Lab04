@@ -1,21 +1,26 @@
-<html>
+@extends('layouts.app')
 
+@section('content')
   @if (session('alert'))
     <div class="alert alert-success">
         {{ session('alert') }}
     </div>
   @endif
-    @include('partials.header')
 
     <img class="card-img-top" src="{{$book->image}}" style="max-width: 256px">
     <h2> {{$book->name}} </h2>
+    @if (!Auth::user()->isSubscribed($book->id))
+        <button class="btn btn-success" formaction="{{ Auth::user()->subscribe($book) }}">Subscribe</button>
+    @else
+        <button class="btn btn-danger" formaction="{{ Auth::user()->unsubscribe($book) }}">Unsubscribe</button>
+    @endif
 
     <p><b>Author(s): </b> {{ $book->authors->pluck('name') }}</p>
     <p><b>Year: </b> {{ $book->year }}</p>
     <p><b>Publisher: </b> {{ $book->publisher }}</p>
     <p><b>ISBN: </b> {{ $book->isbn }}</p>
 
-    @include('partials.footer')
+    <!-- @include('partials.footer') -->
 
 
     <h2>Comments</h2>
@@ -36,4 +41,4 @@
             <button type='submit'>Submit Comment</button>
         </div>
     </form>
-</html>
+@endsection

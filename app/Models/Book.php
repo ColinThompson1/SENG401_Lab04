@@ -26,4 +26,9 @@ class Book extends Model
     {
       return $this->hasMany('App\Models\Comment');
     }
+
+    public function subscriptions()
+    {
+        return $this->hasMany('App\Models\Subscription');
+    }
 }

@@ -18,6 +18,7 @@ class BooksController extends Controller
     {
         $this->middleware('auth')->only(['index', 'show']);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +30,6 @@ class BooksController extends Controller
         $books = Book::all();
 
         return view('pages.books')->with('books', $books);
-
     }
 
     /**

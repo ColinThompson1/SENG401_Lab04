@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{$book->image}}" alt="Card image cap">
+    <img class="card-img-top h-100" src="{{$book->image}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{ $book->name }}</h5>
         <p><b>Author(s): </b> {{ $book->authors->pluck('name') }}</p>
