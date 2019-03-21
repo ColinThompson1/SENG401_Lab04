@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,7 @@ class User extends Authenticatable
 		 * @var array
 		 */
 		protected $fillable = [
-				'name', 'email', 'password',
+				'role', 'email', 'password', 'birthday', 'education',
 		];
 
 		/**
@@ -42,13 +42,13 @@ class User extends Authenticatable
 		**/
 		public function books()
 		{
-			return $this->belongsToMany('App\Book', 'subscription');
+			return $this->belongsToMany('App\Models\Book', 'subscription');
 		}
 		/**
 		* Users can have multiple comments
 		**/
 		public function comments()
 		{
-			return $this->hasMany('App\Comment');
+			return $this->hasMany('App\Models\Comment');
 		}
 }

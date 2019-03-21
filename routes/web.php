@@ -13,8 +13,25 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
+    return redirect('home');
+});
+
+Route::post('books/{isbn}','CommentsController@store');
+
+Route::get('books', function () {
     return redirect('books');
 });
 
 Route::resource('books', 'BooksController');
+
+
+
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

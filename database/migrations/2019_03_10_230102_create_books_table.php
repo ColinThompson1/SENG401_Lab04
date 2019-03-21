@@ -22,7 +22,8 @@ class CreateBooksTable extends Migration
             $table->string('publisher');
             $table->string('subscription_status')->default('unsubscribed');
             $table->string('image');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
